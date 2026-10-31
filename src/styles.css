@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c1210;
+  --color-surface: #15201c;
+  --color-surface-2: #1c2a25;
+  --color-fg: #e7f2ec;
+  --color-muted: #8ea398;
+  --color-primary: #2fbf8a;
+  --color-primary-fg: #062117;
+  --color-danger: #e25b5b;
+  --color-danger-fg: #fff5f5;
+  --color-warn: #e3b341;
+  --color-border: #2a3c35;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 0.85rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    min-height: 100%;
+  }
+  * {
+    border-color: var(--color-border);
+  }
+}
+
+@keyframes pulse-soft {
+  50% { opacity: 0.55; }
+}
+.learning {
+  animation: pulse-soft 1s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .learning { animation: none; }
+}
